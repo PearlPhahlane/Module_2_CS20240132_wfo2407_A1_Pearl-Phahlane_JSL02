@@ -25,6 +25,11 @@ const addNewGoal = () => {
     // Convert the list items (li elements) into an array and check if any matches the new input
     const goals = Array.from(goalList.getElementsByTagName('li'));
     const isDuplicate = goals.some(goal => goal.textContent.toLowerCase() === goalInput.toLowerCase());
+
+    if (isDuplicate) {
+        alert('Goal already exists!');
+        return; //exit the function if a duplicate is found
+    }
     
     // ⚠️ Hint 2: Prevent duplicates
     // If a duplicate is found, display an alert to the user and don't add the goal to the list.
