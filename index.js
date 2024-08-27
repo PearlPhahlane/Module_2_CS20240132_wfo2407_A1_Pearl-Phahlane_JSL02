@@ -27,20 +27,10 @@ const addNewGoal = () => {
     const isDuplicate = goals.some(goal => goal.textContent.toLowerCase() === goalInput.toLowerCase());
 
     if (isDuplicate) {
-        alert('Goal already exists!');
+        alert('Goal already exists!'); //display an alert to the user and don't add the goal to the list.
         return; //exit the function if a duplicate is found
     }
     
-    // ⚠️ Hint 2: Prevent duplicates
-    // If a duplicate is found, display an alert to the user and don't add the goal to the list.
-    // If it's not a duplicate, proceed with adding it as a new goal.
-    
-    // ⚠️ Hint 3: Code structure
-    // You might want to wrap the duplicate-checking logic in an 'if' statement.
-    
-    // ⚠️ Hint 4: Event listener
-    // The event listener that removes goals when clicked is not related to this issue.
-    // Focus on preventing duplicates for now.
     const newGoal = document.createElement('li');
     newGoal.textContent = goalInput;
     goalList.appendChild(newGoal);
